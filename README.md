@@ -4,11 +4,13 @@ In this directory, you will find VPG's technical assessment.
 
 1) Review this example HTML_Javascript html code and make it visually presentable without using external framework like bootstrap
 
-2) Review the either the .Net code snippet or the Python code snippet and fix the bugs in them.  
+2) Review the either the .Net code snippet or the Python code snippet and fix the bugs in them.
 
-3) Add a function to add a temperature reading to the database. 
+3) Add a function to calculate the mean, median, minimum, maximum temperatures and standard deviation between two dates.
 
-4) Send the new revised files back to VPG for review.
+4) Add a function to add a temperature reading to the database. 
+
+5) Send the new revised files back to VPG for review.
 
  
 
