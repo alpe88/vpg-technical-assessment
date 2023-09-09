@@ -1,0 +1,17 @@
+@media (max-width: 767px) {
+  td:first-child,
+  th:first-child {
+    display: none;
+  }
+
+  td:nth-child(n + 3),
+  th:nth-child(n + 3) {
+    display: block;
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+  }
+}

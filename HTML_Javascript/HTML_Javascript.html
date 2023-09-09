@@ -4,100 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task List App - VPG Technical Assesment</title>
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box; /* Ensures that padding and border are included in the element's total width/height */
-      }
-
-      h1 {
-        font-size: 3rem;
-        font-weight: bold;
-      }
-
-      p {
-        font-size: 1rem;
-        line-height: 1.5;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 1rem;
-      }
-
-      th,
-      td {
-        padding: 1.5rem;
-        text-align: left;
-        width: 100%;
-      }
-
-      th:first-child,
-      td:first-child {
-        width: 1rem;
-      }
-
-      td:nth-child(2) {
-        overflow-wrap: anywhere;
-      }
-
-      .mb {
-        margin-bottom: 1.5rem;
-      }
-
-      .text-center {
-        text-align: center;
-      }
-
-      .page {
-        padding: 1.5rem;
-      }
-
-      .bg-green {
-        background-color: #00ff00;
-      }
-
-      .bg-yellow {
-        background-color: #ffff00;
-      }
-
-      .bg-red {
-        background-color: #ff0000;
-      }
-
-      .overflow-ellipsis {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      /* Mobile styles */
-      @media (max-width: 767px) {
-        td:first-child,
-        th:first-child {
-          display: none;
-        }
-
-        td:nth-child(n + 3),
-        th:nth-child(n + 3) {
-          display: block;
-          width: 100%;
-        }
-
-        th,
-        td {
-          padding: 0.5rem;
-        }
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/mobile.css" />
+    <link rel="stylesheet" type="text/css" href="css/color.css" />
   </head>
   <body>
     <main class="page">
       <h1 class="text-center mb">Tasks</h1>
-      <table border="1">
+      <table>
         <thead>
           <tr>
             <th>Id</th>
@@ -111,10 +25,7 @@
         <tbody>
           <tr id="r1">
             <td>1</td>
-            <td>
-              Task 1
-              sf'asasiasoasoasdoasdfkasdofkasofkasodfkasdokasoskdfoasdkfaosdkfsodksofksdofksofksfoskfoskfsofksdofksoksofk
-            </td>
+            <td>Task 1</td>
             <td>09/10/2022</td>
             <td>09/12/2022</td>
             <td class="bg-green">Good</td>
