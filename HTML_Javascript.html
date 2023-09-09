@@ -1,53 +1,95 @@
-﻿
-<h4>Tasks</h4>
-<table border="1">
-    <tr>
-        <td>Id</td>
-        <td>Description</td>
-        <td>Date Started</td>
-        <td>Date Completed</td>
-        <td>Status</td>
-    </tr>
-    <tr id="r1">
-        <td>1</td>
-        <td>Task 1</td>
-        <td>09/10/2022</td>
-        <td>09/12/2022</td>
-        <td style="background-color: #00FF00">Good</td>
-        <td><input type="button" value="remove" onclick="r1.style.display = 'none'"</td>
-    </tr>
-    <tr id="r2">
-        <td>2</td>
-        <td>Task 2</td>
-        <td>09/15/2022</td>
-        <td>09/17/2022</td>
-        <td style="background-color: #FFFF00">Ok</td>
-        <td><input type="button" value="remove" onclick="r2.style.display = 'none'"</td>
-    </tr>
-    <tr id="r3">
-        <td>3</td>
-        <td>Task 3</td>
-        <td colspan="2">---------</td>
-        <td style="background-color: #FF0000" id="fatal">Fatal</td>
-        <td><input type="button" value="remove" onclick="r3.style.display = 'none'"</td>
-        <script>
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task List App - VPG Technical Assesment</title>
 
-            function blinkOn() {
-                fatal.style.backgroundColor = '#FF0000';
-                setTimeout(blinkOff, 500);
-            }
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
 
-            function blinkOff() {
-                fatal.style.backgroundColor = '#FFFFFF';
-                setTimeout(blinkOn, 500);
-            }
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+        width: 100%;
+      }
 
-            blinkOn();
+      th:first-child,
+      td:first-child {
+        width: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h4>Tasks</h4>
+      <table border="1">
+        <tr>
+          <td>Id</td>
+          <td>Description</td>
+          <td>Date Started</td>
+          <td>Date Completed</td>
+          <td>Status</td>
+        </tr>
+        <tr id="r1">
+          <td>1</td>
+          <td>Task 1</td>
+          <td>09/10/2022</td>
+          <td>09/12/2022</td>
+          <td style="background-color: #00ff00">Good</td>
+          <td>
+            <input type="button" value="remove" onclick="r1.style.display =
+            'none'"
+          </td>
+        </tr>
+        <tr id="r2">
+          <td>2</td>
+          <td>Task 2</td>
+          <td>09/15/2022</td>
+          <td>09/17/2022</td>
+          <td style="background-color: #ffff00">Ok</td>
+          <td>
+            <input type="button" value="remove" onclick="r2.style.display =
+            'none'"
+          </td>
+        </tr>
+        <tr id="r3">
+          <td>3</td>
+          <td>Task 3</td>
+          <td colspan="2">---------</td>
+          <td style="background-color: #ff0000" id="fatal">Fatal</td>
+          <td>
+            <input type="button" value="remove" onclick="r3.style.display =
+            'none'"
+          </td>
+        </tr>
+      </table>
+    </main>
 
-        </script>
-    </tr>
+    <footer>
+      <div class="copyright">
+        <p>
+          Copyright ©
+          <a href="https://aleksandar.online">Aleksandar Petrovic</a> 2023
+        </p>
+      </div>
+    </footer>
+    <script>
+      function blinkOn() {
+        fatal.style.backgroundColor = "#FF0000";
+        setTimeout(blinkOff, 500);
+      }
 
+      function blinkOff() {
+        fatal.style.backgroundColor = "#FFFFFF";
+        setTimeout(blinkOn, 500);
+      }
 
-
-</table>
-
+      blinkOn();
+    </script>
+  </body>
+</html>
