@@ -14,3 +14,5 @@
             added page styles
             switched to rem units for better cross device style control
             added mobile styles
+0.0.4 - improved sizing
+0.0.5 - fixed table html syntax

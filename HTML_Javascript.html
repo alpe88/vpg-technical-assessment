@@ -98,39 +98,50 @@
     <main class="page">
       <h1 class="text-center mb">Tasks</h1>
       <table border="1">
-        <tr>
-          <td>Id</td>
-          <td>Description</td>
-          <td>Date Started</td>
-          <td>Date Completed</td>
-          <td>Status</td>
-        </tr>
-        <tr id="r1">
-          <td>1</td>
-          <td>
-            Task 1
-            sf'asasiasoasoasdoasdfkasdofkasofkasodfkasdokasoskdfoasdkfaosdkfsodksofksdofksofksfoskfoskfsofksdofksoksofk
-          </td>
-          <td>09/10/2022</td>
-          <td>09/12/2022</td>
-          <td class="bg-green">Good</td>
-          <td><input type="button" value="remove" onclick="removeTask(r1)"</td>
-        </tr>
-        <tr id="r2">
-          <td>2</td>
-          <td>Task 2</td>
-          <td>09/15/2022</td>
-          <td>09/17/2022</td>
-          <td class="bg-yellow">Ok</td>
-          <td><input type="button" value="remove" onclick="removeTask(r2)"</td>
-        </tr>
-        <tr id="r3">
-          <td>3</td>
-          <td>Task 3</td>
-          <td colspan="2">---------</td>
-          <td class="bg-red" id="fatal">Fatal</td>
-          <td><input type="button" value="remove" onclick="removeTask(r3)"</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Date Started</th>
+            <th>Date Completed</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="r1">
+            <td>1</td>
+            <td>
+              Task 1
+              sf'asasiasoasoasdoasdfkasdofkasofkasodfkasdokasoskdfoasdkfaosdkfsodksofksdofksofksfoskfoskfsofksdofksoksofk
+            </td>
+            <td>09/10/2022</td>
+            <td>09/12/2022</td>
+            <td class="bg-green">Good</td>
+            <td>
+              <input type="button" value="remove" onclick="removeTask(r1)"
+            </td>
+          </tr>
+          <tr id="r2">
+            <td>2</td>
+            <td>Task 2</td>
+            <td>09/15/2022</td>
+            <td>09/17/2022</td>
+            <td class="bg-yellow">Ok</td>
+            <td>
+              <input type="button" value="remove" onclick="removeTask(r2)"
+            </td>
+          </tr>
+          <tr id="r3">
+            <td>3</td>
+            <td>Task 3</td>
+            <td colspan="2">---------</td>
+            <td class="bg-red" id="fatal">Fatal</td>
+            <td>
+              <input type="button" value="remove" onclick="removeTask(r3)"
+            </td>
+          </tr>
+        </tbody>
       </table>
     </main>
 
