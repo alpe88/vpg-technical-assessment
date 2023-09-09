@@ -1,0 +1,10 @@
+0.0.1a - standardized document formatting
+            added html boilerplate
+            moved script to end of body
+0.0.1b - added basic table styling
+            set minimal responsive table width & border collapse
+            set minimal cell padding
+0.0.2 - standardized task status styles and task removal js code
+            added basic css reset
+            moved inline styles to classes
+            moved inline javascript to function

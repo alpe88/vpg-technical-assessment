@@ -6,6 +6,11 @@
     <title>Task List App - VPG Technical Assesment</title>
 
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Ensures that padding and border are included in the element's total width/height */
+      }
       table {
         width: 100%;
         border-collapse: collapse;
@@ -21,6 +26,16 @@
       th:first-child,
       td:first-child {
         width: 1rem;
+      }
+
+      .bg-green {
+        background-color: #00ff00;
+      }
+      .bg-yellow {
+        background-color: #ffff00;
+      }
+      .bg-red {
+        background-color: #ff0000;
       }
     </style>
   </head>
@@ -40,32 +55,23 @@
           <td>Task 1</td>
           <td>09/10/2022</td>
           <td>09/12/2022</td>
-          <td style="background-color: #00ff00">Good</td>
-          <td>
-            <input type="button" value="remove" onclick="r1.style.display =
-            'none'"
-          </td>
+          <td class="bg-green">Good</td>
+          <td><input type="button" value="remove" onclick="removeTask(r1)"</td>
         </tr>
         <tr id="r2">
           <td>2</td>
           <td>Task 2</td>
           <td>09/15/2022</td>
           <td>09/17/2022</td>
-          <td style="background-color: #ffff00">Ok</td>
-          <td>
-            <input type="button" value="remove" onclick="r2.style.display =
-            'none'"
-          </td>
+          <td class="bg-yellow">Ok</td>
+          <td><input type="button" value="remove" onclick="removeTask(r2)"</td>
         </tr>
         <tr id="r3">
           <td>3</td>
           <td>Task 3</td>
           <td colspan="2">---------</td>
-          <td style="background-color: #ff0000" id="fatal">Fatal</td>
-          <td>
-            <input type="button" value="remove" onclick="r3.style.display =
-            'none'"
-          </td>
+          <td class="bg-red" id="fatal">Fatal</td>
+          <td><input type="button" value="remove" onclick="removeTask(r3)"</td>
         </tr>
       </table>
     </main>
@@ -90,6 +96,10 @@
       }
 
       blinkOn();
+
+      function removeTask(taskRowId) {
+        taskRowId.style.display = "none";
+      }
     </script>
   </body>
 </html>
