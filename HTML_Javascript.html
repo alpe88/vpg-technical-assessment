@@ -11,6 +11,12 @@
         padding: 0;
         box-sizing: border-box; /* Ensures that padding and border are included in the element's total width/height */
       }
+      .text-center {
+        text-align: center;
+      }
+      .page {
+        padding: 1.5rem;
+      }
       table {
         width: 100%;
         border-collapse: collapse;
@@ -18,7 +24,7 @@
 
       th,
       td {
-        padding: 8px;
+        padding: 1.5rem;
         text-align: left;
         width: 100%;
       }
@@ -37,11 +43,30 @@
       .bg-red {
         background-color: #ff0000;
       }
+
+      /* Mobile styles */
+      @media (max-width: 767px) {
+        td:first-child,
+        th:first-child {
+          display: none;
+        }
+
+        td:nth-child(n + 3),
+        th:nth-child(n + 3) {
+          display: block;
+          width: 100%;
+        }
+
+        th,
+        td {
+          padding: 0.5rem;
+        }
+      }
     </style>
   </head>
   <body>
-    <main>
-      <h4>Tasks</h4>
+    <main class="page">
+      <h1 class="text-center">Tasks</h1>
       <table border="1">
         <tr>
           <td>Id</td>
@@ -77,8 +102,8 @@
     </main>
 
     <footer>
-      <div class="copyright">
-        <p>
+      <div>
+        <p class="text-center">
           Copyright ©
           <a href="https://aleksandar.online">Aleksandar Petrovic</a> 2023
         </p>

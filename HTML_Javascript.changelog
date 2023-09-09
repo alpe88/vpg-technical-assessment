@@ -4,7 +4,13 @@
 0.0.1b - added basic table styling
             set minimal responsive table width & border collapse
             set minimal cell padding
-0.0.2 - standardized task status styles and task removal js code
+0.0.2a - standardized task status styles
             added basic css reset
             moved inline styles to classes
+0.0.2b - standardized task removal js code
             moved inline javascript to function
+0.0.3 - standardized page organization and styles
+            set heading to level 1
+            added page styles
+            switched to rem units for better cross device style control
+            added mobile styles
