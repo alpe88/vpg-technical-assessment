@@ -11,15 +11,21 @@
         padding: 0;
         box-sizing: border-box; /* Ensures that padding and border are included in the element's total width/height */
       }
-      .text-center {
-        text-align: center;
+
+      h1 {
+        font-size: 3rem;
+        font-weight: bold;
       }
-      .page {
-        padding: 1.5rem;
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
       }
+
       table {
         width: 100%;
         border-collapse: collapse;
+        font-size: 1rem;
       }
 
       th,
@@ -34,14 +40,38 @@
         width: 1rem;
       }
 
+      td:nth-child(2) {
+        overflow-wrap: anywhere;
+      }
+
+      .mb {
+        margin-bottom: 1.5rem;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .page {
+        padding: 1.5rem;
+      }
+
       .bg-green {
         background-color: #00ff00;
       }
+
       .bg-yellow {
         background-color: #ffff00;
       }
+
       .bg-red {
         background-color: #ff0000;
+      }
+
+      .overflow-ellipsis {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       /* Mobile styles */
@@ -66,7 +96,7 @@
   </head>
   <body>
     <main class="page">
-      <h1 class="text-center">Tasks</h1>
+      <h1 class="text-center mb">Tasks</h1>
       <table border="1">
         <tr>
           <td>Id</td>
@@ -77,7 +107,10 @@
         </tr>
         <tr id="r1">
           <td>1</td>
-          <td>Task 1</td>
+          <td>
+            Task 1
+            sf'asasiasoasoasdoasdfkasdofkasofkasodfkasdokasoskdfoasdkfaosdkfsodksofksdofksofksfoskfoskfsofksdofksoksofk
+          </td>
           <td>09/10/2022</td>
           <td>09/12/2022</td>
           <td class="bg-green">Good</td>
