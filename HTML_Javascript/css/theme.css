@@ -1,0 +1,58 @@
+.bg-green {
+  background-color: #00ff00;
+}
+
+.bg-yellow {
+  background-color: #ffff00;
+}
+
+.bg-red {
+  background-color: #ff0000;
+}
+
+body {
+  color: #05574a;
+}
+
+a {
+  color: #05574a;
+}
+
+table {
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+thead tr {
+  border: 1px solid #05574a;
+  box-shadow: 0px 0px 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+td:hover {
+  background-color: #b4b3b3;
+  color: #ffffff;
+  box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+input[type="button"] {
+  padding: 0.5rem 1.5rem;
+  background-color: #05574a;
+  color: #e7fefe;
+  border: 1px solid #e7fefe;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input[type="button"]:hover {
+}
+
+input[type="button"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
+}

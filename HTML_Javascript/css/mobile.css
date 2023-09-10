@@ -8,10 +8,15 @@
   th:nth-child(n + 3) {
     display: block;
     width: 100%;
+    border-left: 1px solid;
   }
 
   th,
   td {
     padding: 0.5rem;
+  }
+
+  .page {
+    width: 100%;
   }
 }

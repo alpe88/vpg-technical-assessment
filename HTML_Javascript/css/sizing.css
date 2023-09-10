@@ -4,6 +4,11 @@
   box-sizing: border-box; /* Ensures that padding and border are included in the element's total width/height */
 }
 
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5;
+}
+
 h1 {
   font-size: 3rem;
   font-weight: bold;
@@ -11,12 +16,12 @@ h1 {
 
 p {
   font-size: 1rem;
-  line-height: 1.5;
 }
 
 table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   font-size: 1rem;
 }
 
@@ -29,6 +34,7 @@ td {
   padding: 1.5rem;
   text-align: left;
   width: 100%;
+  min-width: 75px;
 }
 
 th:first-child,
@@ -40,14 +46,6 @@ td:nth-child(2) {
   overflow-wrap: anywhere;
 }
 
-tr:nth-child(even) {
-  background-color: #415a77;
-}
-
-tr:nth-child(odd) {
-  background-color: #e0e1dd;
-}
-
 .mb {
   margin-bottom: 1.5rem;
 }
@@ -56,7 +54,12 @@ tr:nth-child(odd) {
   text-align: center;
 }
 
+.centered {
+  margin: 0 auto;
+}
+
 .page {
+  width: 80vw;
   padding: 1.5rem;
 }
 
@@ -64,4 +67,22 @@ tr:nth-child(odd) {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.task-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-status .circle {
+  margin-left: 1.5rem;
+}
+
+.circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid;
+  border-radius: 50%;
+  display: inline-block;
 }
