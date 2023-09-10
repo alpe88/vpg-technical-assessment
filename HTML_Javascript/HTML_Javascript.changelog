@@ -18,3 +18,7 @@
 0.0.5 - fixed table html syntax
 0.0.6 - restructured code
             moved css to relevant folder/files for better readability
+0.0.7a - centered page and Copyright
+0.0.7b - added task status html for better styling control
+0.0.7c - added css for a professional look
+0.0.7d - renamed css files
