@@ -14,9 +14,14 @@ def ReadTemperatures(startDate, endDate):
                            password=db['PASSWORD'], host=db['HOST'], port=db['PORT'])
     cur = con.cursor()
     sql = "SELECT id, sensor, name, temp, date, guid, remarks FROM TempReadings"
+    cur.execute(sql)
     readOk = True
     while readOk:
         data = cur.fetchone()
+        if data is None:
+            readOk = False
+            break
+
         if data[4] >= endDate and data[4] <= startDate:
             readings[count] = data[3]
             count = count + 1
@@ -27,4 +32,4 @@ start = datetime.now() - timedelta(days=1)
 end = datetime.now()
 temps = ReadTemperatures(start, end)
 for t in temps:
-    print(temps)
+    print(t)
