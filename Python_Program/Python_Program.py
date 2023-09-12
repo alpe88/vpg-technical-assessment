@@ -184,3 +184,14 @@ end = datetime.now()
 temps = ReadTemperatures(start, end)
 for t in temps:
     print(t)
+
+temperature_reading = {
+    'id': 99,
+    'sensor': 'Sensor99',
+    'name': 'Location99',
+    'temp': 24.55,
+    'date': datetime.now() - timedelta(days=1),
+    'guid': 'guid99',
+    'remarks': 'Remarks 99',
+}
+InsertTemperature(temperature_reading)
