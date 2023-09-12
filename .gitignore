@@ -1,0 +1,15 @@
+# Python-specific
+__pycache__/
+*.pyc
+
+# Configuration files
+config.json
+Python_Program/config.json
+
+# Virtual environments
+venv/
+env/
+
+# Misc
+requirements.txt
+
