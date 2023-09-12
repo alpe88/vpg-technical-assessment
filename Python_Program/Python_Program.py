@@ -1,7 +1,7 @@
 import traceback
 
-from Python_Program.database import open_connection, close_connection
-from Python_Program.utils import calculate_mean
+from database import open_connection, close_connection
+from utils import calculate_mean, calculate_standard_deviation, find_median
 
 from datetime import datetime, timedelta
 
@@ -68,7 +68,7 @@ def ReadTemperatures(startDate, endDate):
     return readings
 
 
-def MeanTemperature(startDate, endDate):
+def TemperatureStatistics(startDate, endDate):
     try:
         connection = open_connection()
         cursor = connection.cursor()
@@ -82,95 +82,13 @@ def MeanTemperature(startDate, endDate):
             print("No temperature readings found in the specified date range.")
             return None
 
-        return calculate_mean(temperature_readings)
-    except Exception as e:
-        traceback.print_exc()
-        print(f"An error occurred: {e}")
-    finally:
-        close_connection(connection)
-
-
-def MedianTemperature(startDate, endDate):
-    try:
-        connection = open_connection()
-        cursor = connection.cursor()
-
-        query_select = """SELECT temp FROM TempReadings WHERE date >= %s AND date <= %s"""
-        cursor.execute(query_select, (startDate, endDate))
-
-        temperature_readings = [row[0] for row in cursor.fetchall()]
-
-        if not temperature_readings:
-            print("No temperature readings found in the specified date range.")
-            return None
-
-        return find_median(temperature_readings)
-    except Exception as e:
-        traceback.print_exc()
-        print(f"An error occurred: {e}")
-    finally:
-        close_connection(connection)
-
-
-def MinimumTemperature(startDate, endDate):
-    try:
-        connection = open_connection()
-        cursor = connection.cursor()
-
-        query_select = """SELECT temp FROM TempReadings WHERE date >= %s AND date <= %s"""
-        cursor.execute(query_select, (startDate, endDate))
-
-        temperature_readings = [row[0] for row in cursor.fetchall()]
-
-        if not temperature_readings:
-            print("No temperature readings found in the specified date range.")
-            return None
-
-        return min(temperature_readings)
-    except Exception as e:
-        traceback.print_exc()
-        print(f"An error occurred: {e}")
-    finally:
-        close_connection(connection)
-
-
-def MaximumTemperature(startDate, endDate):
-    try:
-        connection = open_connection()
-        cursor = connection.cursor()
-
-        query_select = """SELECT temp FROM TempReadings WHERE date >= %s AND date <= %s"""
-        cursor.execute(query_select, (startDate, endDate))
-
-        temperature_readings = [row[0] for row in cursor.fetchall()]
-
-        if not temperature_readings:
-            print("No temperature readings found in the specified date range.")
-            return None
-
-        return max(temperature_readings)
-    except Exception as e:
-        traceback.print_exc()
-        print(f"An error occurred: {e}")
-    finally:
-        close_connection(connection)
-
-
-def StandardDeviation(startDate, endDate):
-    try:
-        connection = open_connection()
-        cursor = connection.cursor()
-
-        query_select = """SELECT temp FROM TempReadings WHERE date >= %s AND date <= %s"""
-        cursor.execute(query_select, (startDate, endDate))
-
-        temperature_readings = [row[0] for row in cursor.fetchall()]
-
-        if not temperature_readings:
-            print("No temperature readings found in the specified date range.")
-            return None
-
-        return calculate_standard_deviation(temperature_readings)
+        return {
+            'mean': calculate_mean(temperature_readings),
+            'median': find_median(temperature_readings),
+            'min': min(temperature_readings),
+            'max': max(temperature_readings),
+            'standard_deviation': calculate_standard_deviation(temperature_readings)
+        }
     except Exception as e:
         traceback.print_exc()
         print(f"An error occurred: {e}")
@@ -184,6 +102,10 @@ end = datetime.now()
 temps = ReadTemperatures(start, end)
 for t in temps:
     print(t)
+
+temperature_statistics = TemperatureStatistics(start, end)
+print(
+    f"The statistics of temperature readings between our date range is: {temperature_statistics}")
 
 temperature_reading = {
     'id': 99,
