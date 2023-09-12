@@ -1,0 +1,10 @@
+List of Issues (assuming database and table is already set up):
+    -the sql statement in ReadTemperatures is not executed
+    -the readOk loop will run infinitely/does not have an escape/end condition
+    -the print function prints the wrong variable
+
+General updates/recommendations or observations
+    -close cursor and connection at end of execution
+    -use append() to assign readings rather than appending at a specific index
+    -add error handling where appropriate
+    -include date checks in the query
