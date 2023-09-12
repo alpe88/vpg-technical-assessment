@@ -8,6 +8,37 @@ from datetime import datetime, timedelta
 MAX_TEMP = 0xFFFF
 
 
+def InsertTemperature(temperature_reading):
+    if not set(['id', 'sensor', 'name', 'temp', 'date', 'guid', 'remarks']).issubset(temperature_reading.keys()):
+        print("Incomplete temperature reading data provided. Missing keys.")
+        return None
+
+    try:
+        connection = open_connection()
+        cursor = connection.cursor()
+
+        query_insert = """INSERT INTO TempReadings (id, sensor, name, temp, date, guid, remarks) 
+                              VALUES (%s, %s, %s, %s, %s, %s, %s)"""
+        cursor.execute(query_insert, (
+            temperature_reading['id'],
+            temperature_reading['sensor'],
+            temperature_reading['name'],
+            temperature_reading['temp'],
+            temperature_reading['date'],
+            temperature_reading['guid'],
+            temperature_reading['remarks']
+        ))
+
+        connection.commit()
+
+        print("Temperature reading added succesfully!")
+    except Exception as e:
+        traceback.print_exc()
+        print(f"An error occurred: {e}")
+    finally:
+        close_connection(connection)
+
+
 def ReadTemperatures(startDate, endDate):
     readings = []
 
